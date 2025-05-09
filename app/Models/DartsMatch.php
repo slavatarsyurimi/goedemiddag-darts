@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class DartsMatch extends Model
 {
+    const STARTING_POINTS = 501;
+
     /**
      * The table associated with the model.
      */
