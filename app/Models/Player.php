@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Player extends Model
 {
     /**
+     * The attributes that are mass assignable.
+     */
+    protected $fillable = [
+        'full_name',
+    ];
+
+    /**
      * The matches that the player participated in.
      */
     public function matches(): BelongsToMany
