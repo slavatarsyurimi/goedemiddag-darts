@@ -8,6 +8,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Toss extends Model
 {
     /**
+     * The attributes that are mass assignable.
+     */
+    protected $fillable = [
+        'score',
+        'order',
+    ];
+
+    /**
      * The visit that this toss belongs to.
      */
     public function visit(): BelongsTo

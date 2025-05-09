@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('visit_id')->constrained()->onDelete('cascade');
             $table->unsignedInteger('order');
-            $table->unsignedInteger('score');
+            $table->unsignedInteger('score')->nullable();
             $table->timestamps();
 
             $table->unique(['visit_id', 'order']);

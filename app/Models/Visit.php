@@ -10,6 +10,20 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Visit extends Model
 {
     /**
+     * The "booted" method of the model.
+     */
+    protected static function booted(): void
+    {
+        static::created(function (Visit $visit) {
+            $visit->tosses()->createMany([
+                ['score' => null],
+                ['score' => null],
+                ['score' => null],
+            ]);
+        });
+    }
+
+    /**
      * The attributes that are mass assignable.
      */
     protected $fillable = [
