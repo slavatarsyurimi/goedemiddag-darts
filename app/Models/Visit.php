@@ -10,6 +10,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Visit extends Model
 {
     /**
+     * The attributes that are mass assignable.
+     */
+    protected $fillable = [
+        'player_id',
+        'order',
+    ];
+
+    /**
      * The match that this visit belongs to.
      */
     public function dartsMatch(): BelongsTo
